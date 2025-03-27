@@ -424,7 +424,7 @@ APICALL EXPORT PLUGIN_DESCRIPTION_INFO PLUGIN_INIT(HANDLE handle) {
                                      "[hyprsplit] Failure in initialization: Version mismatch (headers "
                                      "ver is not equal to running hyprland ver)",
                                      CHyprColor{1.0, 0.2, 0.2, 1.0}, 5000);
-        throw std::runtime_error("[hyprsplit] Version mismatch");
+        throw std::runtime_error(std::string("[hyprsplit] Version mismatch" + HASH + " / " GIT_COMMIT_HASH));
     }
 
     HyprlandAPI::addConfigValue(PHANDLE, "plugin:hyprsplit:num_workspaces", Hyprlang::INT{10});
